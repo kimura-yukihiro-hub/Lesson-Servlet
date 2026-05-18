@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>アンケートフォーム</title>
+	<script>
+		function addCommentField() {
+			const container = document.getElementById("comments");
+			const input = document.createElement("input");
+			input.type = "text";
+			input.name = "comment";
+			container.appendChild(document.createElement("br"));
+			container.appendChild(input);
+		}
+	</script>
+</head>
+
+<body>
+	<h2>感想を教えてください (複数可)</h2>
+	<form action="PracticeA03" method="post">
+		<div id="comments">
+			<input type="text" name="comment">
+		</div>
+		<button type="button" onclick="addCommentField()">追加</button>
+		<br><br>
+		<input type="submit" value="送信">
+	</form>
+
+</body>
+
+</html>

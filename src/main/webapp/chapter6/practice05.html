@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Servlet/JSP</title>
+</head>
+
+<body>
+	<h2>旅行プラン入力フォーム</h2>
+	<form action="Practice05" method="post">
+		<p>行き先: <input type="text" name="destination" value="東京" required></p>
+
+		<p>日数: <input type="number" name="days" min="1" max="30" value="3" required></p>
+		<p>
+			交通手段:
+			<select name="transport">
+				<option value="飛行機">飛行機</option>
+				<option value="新幹線" selected>新幹線</option>
+				<option value="車">車</option>
+			</select>
+		</p>
+
+
+		<input type="hidden" name="campaign" value="spring2025">
+		<p>
+			<input type="submit" value="予約する">
+		</p>
+	</form>
+
+</body>
+
+</html>
