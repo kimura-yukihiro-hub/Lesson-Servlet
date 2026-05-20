@@ -8,6 +8,7 @@
 	
 	session.setAttribute("user", username);
 	response.sendRedirect("secure/mypage.jsp");
+	
 	} else {
 	response.sendRedirect("login2.jsp");
 	}
