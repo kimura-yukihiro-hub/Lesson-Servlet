@@ -52,6 +52,9 @@ public class Sort extends HttpServlet {
 				out.println(":");
 				out.println(rs.getInt("price"));
 				out.println("円<br>");
+
+				out.println("<a href='Update?id=" + rs.getInt("id") + "'>[変更]</a>");
+				out.println("<br>");
 			}
 
 			st.close();
