@@ -8,6 +8,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import jp.co.aforce.beans.Tweet;
 import jp.co.aforce.dao.TweetDAO;
 
@@ -17,6 +19,18 @@ public class TweetListServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		String message =(String)session.getAttribute("message");
+		String messageType =(String)session.getAttribute("messageType");
+		
+		if (message != null) {
+			request.setAttribute("message", message);
+			request.setAttribute("messageType", messageType);
+			
+			session.removeAttribute("message");
+			session.removeAttribute("messageType");
+		}
 		TweetDAO tweetDAO = new TweetDAO();
 		try {
 			List<Tweet> tweets = tweetDAO.getAllTweets();
